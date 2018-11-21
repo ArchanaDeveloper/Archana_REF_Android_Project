@@ -72,7 +72,7 @@ public class MyMessagingService extends Service {
 
         // Build a RemoteInput for receiving voice input in a Car Notification
         RemoteInput remoteInput = new RemoteInput.Builder(EXTRA_VOICE_REPLY)
-                .setLabel("Reply by voice")
+                .setLabel("Reply by your voice in your sysytem")
                 .build();
 
         // Building a Pending Intent for the reply action to trigger
