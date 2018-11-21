@@ -27,12 +27,14 @@ public class MessageReadReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        // Lets create and implement this android auto
         if (MyMessagingService.READ_ACTION.equals(intent.getAction())) {
             int conversationId = intent.getIntExtra(MyMessagingService.CONVERSATION_ID, -1);
             if (conversationId != -1) {
                 Log.d(TAG, "Conversation " + conversationId + " was read");
                 NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
                 notificationManager.cancel(conversationId);
+                notificationManager.cancelAll();
             }
         }
     }
